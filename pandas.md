@@ -138,3 +138,33 @@ df.isnull().sum()
 ````
 df.sort_values(['age', 'earn'], ascending=True)
 ````
+
+### Group by : split -> apply -> combine
+````
+df.groupby("Team")["Points"].sum()
+# TeamA  100
+# TeamB  20
+
+df.groupby(["Team", "Year"])["Points"].sum()
+# TeamA  2020 100
+# TeamA  2021 100
+# TeamB  2001 20
+````
+
+````
+df.groupby('Team').unstack()   // grouped df -> matrix
+grouped_df.get_group("TeamDevils")
+````
+
+````
+grouped_df['Points'].agg(sum)
+grouped_df['Points'].agg([np.sum, np.mean, np.std])
+````
+````
+score = lambda x: (x - x.mean()) / x.std()
+grouped.transform(score)  // transform based on each group
+````
+
+````
+df.groupby('Team').filter(lambda x: len(x) >= 3)
+````
