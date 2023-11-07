@@ -36,7 +36,7 @@ df.iloc[:2]
 ````
 df['age'] > 40  # [True, False, True, ...]
 df.T
-df.values   # [[row1], [row2], ...]
+df['age'].values   # [10, 20, ...]
 df.to_csv()
 ````
 
@@ -63,6 +63,7 @@ df.iloc[:2]
 df['age'] > 40  # [True, False, True, ...]
 df.T
 df.values   # [[row1], [row2], ...]
+df['class'].value_counts() # 0: 100, 1: 207 ...
 df.to_csv()
 ````
 
