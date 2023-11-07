@@ -190,3 +190,9 @@ df = pd.concat([df_a, df_b], axis=0)
 df.reset_index()
 df_a.append(df_b)
 ````
+
+### cut
+````
+bins = list(range(0, 81, 10))
+age_categories = pd.cut(df["age"], bins) 
+````
