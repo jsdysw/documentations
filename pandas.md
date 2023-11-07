@@ -172,3 +172,10 @@ grouped.transform(score)  // transform based on each group
 ````
 df.groupby('Team').filter(lambda x: len(x) >= 3)
 ````
+
+````
+df.groupby(['month', 'item'])['date'].count()
+df_phone.groupby(['month', 'item']).agg({'duration':[min, max, sum], 'network_type':"count", 'date': [min, 'first', 'nunique']})
+````
+
+<img width="940" alt="Screenshot 2023-11-07 at 10 05 17 PM" src="https://github.com/jsdysw/documentations/assets/76895949/a9df2685-e775-40c1-852d-1ffe93ac0179">
