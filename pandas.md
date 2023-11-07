@@ -179,3 +179,13 @@ df_phone.groupby(['month', 'item']).agg({'duration':[min, max, sum], 'network_ty
 ````
 
 <img width="940" alt="Screenshot 2023-11-07 at 10 05 17 PM" src="https://github.com/jsdysw/documentations/assets/76895949/a9df2685-e775-40c1-852d-1ffe93ac0179">
+
+### merge & concat
+````
+pd.merge(df_a, df_b, on='subject_id', how='right')   // outer, inner, right, left join
+````
+````
+df = pd.concat([df_a, df_b], axis=0)
+df.reset_index()
+df_a.append(df_b)
+````
