@@ -97,11 +97,44 @@ df['gender'].map(z)
 df['gender'].replace(z)
 df['gender'].replace(['male', 'female'], [0,1], inplace=True)
 ````
-````
-df['gender'].unique()
-````
+
 
 ### apply - modify several columns
 ````
 df[['age', 'dept']].apply(lambda x: x.max() - x.min()) 
+````
+
+### built in functions
+````
+df.describe()    // summary
+df.head()
+df['gender'].unique()
+````
+````
+value = list(map(int, np.array(list(enumerate(df['gender'].unique())))[:0].tolist()))
+key = np.array(list(enumerate(df['gender'].unique())))[:1].tolist()
+# value => [0, 1], key => ['male', 'female']
+df['gender'].replace(to_replace=key, value=value, inplace=True)
+````
+
+````
+df.sum(axis=0)
+df.sum(axis=1)
+````
+
+````
+df.isnull()
+#  [[false, True],
+#  [false, True]]
+````
+
+````
+df.isnull().sum()
+# age  0
+# address 10
+# name 1
+````
+
+````
+df.sort_values(['age', 'earn'], ascending=True)
 ````
