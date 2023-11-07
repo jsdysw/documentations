@@ -72,6 +72,10 @@ df.drop([1,2])  # drop row of index name 1 and 2
 df.drop("age", axis=1)  # drop age column
 ````
 
+````
+df_people[df_people['gender'] == 'male']
+````
+
 
 
 ### operation
